@@ -7,3 +7,5 @@ const getAllMovies = require('../controllers/movieController');
 router.get("/api/search", getAllMovies);
 
 router.get("/api/movies/:id");
+
+module.exports = router;
