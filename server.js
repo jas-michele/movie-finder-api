@@ -8,6 +8,7 @@ const movieRoutes = require('./routes/movieRoutes');
 
 
 app.use('/api', movieRoutes)
+console.log("Server loading routes... ")
 
 // app.use('/api/search')
 

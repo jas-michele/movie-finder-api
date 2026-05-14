@@ -3,10 +3,14 @@ const axios = require('axios');
 require('dotenv').config();
 const API_KEY = process.env.OMDB_API_KEY
 
+console.log(API_KEY);
+
 const apiClient = require("../api/apiClient")
 
 
 
+
+console.log("Controller reached")
 
 const searchMovies = async (req, res ) => {
     try {
