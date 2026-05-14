@@ -8,10 +8,6 @@ console.log(API_KEY);
 const apiClient = require("../api/apiClient")
 
 
-
-
-console.log("Controller reached")
-
 const searchMovies = async (req, res ) => {
     try {
         const moviesTitle = req.query.title;
@@ -34,6 +30,27 @@ const searchMovies = async (req, res ) => {
         error: "Server error"
        });
     }  
+}
+
+const getMovieDetails = async (req, res) => {
+
+    try {
+        const movieId = req.params.id;
+
+        const response = apiClient.get(`?apikey=${API_KEY}&i=${movieId}`)
+
+        res.json(response.data)
+
+    } catch (error) {
+
+        console.error(error.message);
+
+        res.status(500).json({
+            error: "Sever error"
+        })
+    }
+
+
 }
 
 module.exports = searchMovies;
