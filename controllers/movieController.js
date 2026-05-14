@@ -8,4 +8,10 @@ const API_KEY = process.env.OMDB_API_KEY
 
 
 
-const getAllMovies = (req )
+const getAllMovies = async (req, res ) => {
+    try {
+        const movieTitle = req.params.toLowerCase();
+
+        const movieAPIRespons = axios.create()
+    }
+}
