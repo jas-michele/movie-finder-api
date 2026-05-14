@@ -37,7 +37,7 @@ const getMovieDetails = async (req, res) => {
     try {
         const movieId = req.params.id;
 
-        const response = apiClient.get(`?apikey=${API_KEY}&i=${movieId}`)
+        const response = await apiClient.get(`?apikey=${API_KEY}&i=${movieId}`)
 
         res.json(response.data)
 
