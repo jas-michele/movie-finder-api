@@ -8,11 +8,17 @@ const apiClient = require("./api/apiClient");
 
 
 
-const getAllMovies = async (req, res ) => {
+const searchMovies = async (req, res ) => {
     try {
         const moviesTitle = req.query.title;
 
-        const movieAPIResponse = apiClient.get(`?apikey=${API_KEY}&/s=${moviesTitle}`);
+        if(!moviesTitle) {
+            return res.status(400).json({
+                error: "Title query parameter is required"
+            });
+        }
+
+        const movieAPIResponse = apiClient.get(`?apikey=${API_KEY}&s=${moviesTitle}`);
 
         const movieData = await movieAPIResponse.json();
 
