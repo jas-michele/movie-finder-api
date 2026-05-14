@@ -3,12 +3,13 @@ const app = express();
 
 require('dotenv').config();
 const PORT = process.env.PORT
+const movieRoutes = require("./routes/movieRoutes");
 
 
 const movieRoutes = require('./routes/movieRoutes');
 
 
-app.use('/')
+app.use('/', movieRoutes)
 
 app.use('/api/search')
 
