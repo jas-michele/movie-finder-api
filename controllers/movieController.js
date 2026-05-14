@@ -10,7 +10,7 @@ const apiClient = require("./api/apiClient");
 
 const getAllMovies = async (req, res ) => {
     try {
-        const moviesTitle = req.params.toLowerCase();
+        const moviesTitle = req.query.title;
 
         const movieAPIResponse = apiClient.get(`?apikey=${API_KEY}&/s=${moviesTitle}`);
 

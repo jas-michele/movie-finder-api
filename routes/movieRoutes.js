@@ -4,7 +4,7 @@ const getMovies = require("../controllers/movieController");
 const getAllMovies = require('../controllers/movieController');
 
 
-router.get("/api/search", getAllMovies);
+router.get("/search", getAllMovies);
 
 // router.get("/api/movies/:id");
 
