@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-
-const 
+require('dotenv').config();
+const API_KEY = process.env.OMDB_API_KEY
 
 
 
