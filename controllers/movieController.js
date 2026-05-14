@@ -21,5 +21,16 @@ const getAllMovies = async (req, res ) => {
         const transformedTitle = {
             movieTitle: movieData.title
         }
-    } catch 
+    } catch (error) {
+
+        if (error.response) {
+            console.error('API Error:', error.response.status, error.response.data);
+            res.status(error.response.status).json({ message: 'Error fetching data from external API.' });
+        } else {
+            console.error('Network Error:', error.message);
+            res.status(500).json({ message: 'A network error occurred.' });
+        }
+    }
 }
+
+module.exports = getAllMovies;
