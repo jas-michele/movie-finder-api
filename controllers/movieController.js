@@ -53,4 +53,5 @@ const getMovieDetails = async (req, res) => {
 
 }
 
-module.exports = searchMovies;
+module.exports = {searchMovies,
+                    getMovieDetails}
