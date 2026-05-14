@@ -7,7 +7,7 @@ const PORT = process.env.PORT
 const movieRoutes = require('./routes/movieRoutes');
 
 
-app.use('/', movieRoutes)
+app.use('/api', movieRoutes)
 
 // app.use('/api/search')
 
